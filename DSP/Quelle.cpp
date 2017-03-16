@@ -1,8 +1,8 @@
-#include <iostream>
+#include <stdio.h>
 #include "Channel.h"
 
 int main() {
-	std::cout << "hi" << std::endl;
+	printf("Starting DSP framework!");
 	Channel channel = Channel();
 
 	getchar();

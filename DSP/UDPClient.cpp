@@ -103,5 +103,5 @@ void UDPClient::listen()
 	}
 
 	Logger::log("UDP client stopped listening");
-	close(socket);
+	close(s);
 }

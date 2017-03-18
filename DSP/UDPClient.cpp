@@ -2,6 +2,7 @@
 #include "Logger.h"
 #include <ostream>
 #include <iostream>
+#include <thread>
 
 std::list<DigitalAudioInput*> UDPClient::registeredDigitalInputs = std::list<DigitalAudioInput*>();
 
@@ -56,14 +57,34 @@ void UDPClient::start()
 		die("bind");
 	}
 
+	std::thread listeningThread(listen, s);
+}
+
+void UDPClient::stop()
+{
+	listening = false;
+}
+
+
+void UDPClient::deallocate()
+{
+	if (listening) stop();
+	registeredDigitalInputs.clear();
+}
+
+void UDPClient::listen(int socket)
+{
+	Logger::log("UDP client started listening");
+	listening = true;
+
 	//keep listening for data
-	while (1)
+	while (listening)
 	{
 		printf("Waiting for data...");
 		fflush(stdout);
 
 		//try to receive some data, this is a blocking call
-		if ((recv_len = recvfrom(s, buf, BUFLEN, 0, (struct sockaddr *) &si_other, &slen)) == -1)
+		if ((recv_len = recvfrom(s, buf, BUFLEN, 0, reinterpret_cast<struct sockaddr*>(&si_other), &slen)) == -1)
 		{
 			die("recvfrom()");
 		}
@@ -79,10 +100,6 @@ void UDPClient::start()
 		}
 	}
 
-	close(s);
-}
-
-void UDPClient::deallocate()
-{
-	registeredDigitalInputs.clear();
+	Logger::log("UDP client stopped listening");
+	close(socket);
 }

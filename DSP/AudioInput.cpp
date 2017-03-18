@@ -1,5 +1,4 @@
 ﻿#include "AudioInput.h"
-#include "Plugin.h"
 
 
 void AudioInput::addPlugin(Plugin plugin) const
@@ -10,6 +9,10 @@ void AudioInput::addPlugin(Plugin plugin) const
 void AudioInput::addListeningChannel(InputChannel channel) const
 {
 	this->addListeningChannel(channel);
+}
+
+AudioInput::AudioInput()
+{
 }
 
 AudioInput::~AudioInput()

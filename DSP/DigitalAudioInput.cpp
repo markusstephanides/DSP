@@ -5,6 +5,11 @@ DigitalAudioInput::DigitalAudioInput(int inputId_)
 	this->inputId = inputId_;
 }
 
+DigitalAudioInput::~DigitalAudioInput()
+{
+
+}
+
 int DigitalAudioInput::getInputId() const
 {	
 	return this->inputId;

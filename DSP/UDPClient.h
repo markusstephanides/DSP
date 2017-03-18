@@ -17,11 +17,9 @@ class UDPClient
 public:
 	UDPClient();
 	~UDPClient();
-	static UDPClient* getInstance();
 	static DigitalAudioInput* registerDigitalInput(int inputId);
 	static void start();
 	static void deallocate();
 private:
 	static std::list<DigitalAudioInput*> registeredDigitalInputs;
-	//static UDPClient* instance;
 };

@@ -10,7 +10,7 @@ public:
 	void addPlugin(Plugin) const;
 	void addListeningChannel(InputChannel) const;
 	AudioInput();
-	~AudioInput();
+	virtual ~AudioInput();
 private:
 	const char* name;
 	bool enabled;

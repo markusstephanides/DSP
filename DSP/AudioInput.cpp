@@ -1,6 +1,10 @@
 ﻿#include "AudioInput.h"
 
 
+void AudioInput::read(char[])
+{
+}
+
 void AudioInput::addPlugin(Plugin plugin) const
 {
 	this->addPlugin(plugin);

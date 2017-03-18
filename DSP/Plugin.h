@@ -5,6 +5,6 @@ class Plugin
 {
 public:
 	Plugin();
-	~Plugin();
+	virtual ~Plugin();
 	virtual void process(byte[]);
 };

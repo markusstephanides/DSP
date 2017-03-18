@@ -7,6 +7,7 @@
 
 std::list<DigitalAudioInput*> UDPClient::registeredDigitalInputs = std::list<DigitalAudioInput*>();
 bool UDPClient::listening = false;
+int UDPClient::socket = -1;
 
 DigitalAudioInput* UDPClient::registerDigitalInput(int inputId)
 {
@@ -32,21 +33,18 @@ void die(const char *s)
 
 void UDPClient::start()
 {
-	Logger::log("1");
-	std::cout << "Current thread id: " << std::this_thread::get_id() << "\n";
 	std::thread(listen).detach();
-	Logger::log("AFASDFA");
 }
 
 void UDPClient::stop()
 {
 	listening = false;
+	close(socket);
 }
 
 
 void UDPClient::deallocate()
 {
-	
 	if (listening) {
 		stop();
 		Logger::log("Deallocating UDPClient after it was stopped!");
@@ -57,8 +55,6 @@ void UDPClient::deallocate()
 
 void UDPClient::listen()
 {
-	std::cout << "Current thread id: " << std::this_thread::get_id() << "\n";
-	Logger::log("2");
 	struct sockaddr_in si_me, si_other;
 
 	int s, i;
@@ -73,6 +69,8 @@ void UDPClient::listen()
 		die("socket");
 	}
 
+	socket = s;
+
 	// zero out the structure
 	memset((char *)&si_me, 0, sizeof(si_me));
 
@@ -85,7 +83,6 @@ void UDPClient::listen()
 	{
 		die("bind");
 	}
-
 
 	Logger::log("UDP client started listening");
 	listening = true;
@@ -115,5 +112,4 @@ void UDPClient::listen()
 	}
 
 	Logger::log("UDP client stopped listening");
-	close(s);
 }

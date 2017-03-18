@@ -110,7 +110,9 @@ void UDPClient::deallocate()
 	Logger::log("1");
 	for (DigitalAudioInput* input : registeredDigitalInputs)
 	{
+		Logger::log("jap");
 		delete input;
+		Logger::log("jap2");
 	}
 	Logger::log("2");
 }

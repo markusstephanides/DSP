@@ -6,5 +6,4 @@ void Logger::log(const char* string)
 {
 	printf(string);
 	printf("\n");
-	delete string;
 }

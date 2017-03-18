@@ -1,21 +1,94 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Channel.cpp" />
-    <ClCompile Include="Quelle.cpp" />
     <ClCompile Include="UDPClient.cpp">
       <Filter>Network</Filter>
     </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="UI.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Channel.cpp">
+      <Filter>Audio\Channels</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioInput.cpp">
+      <Filter>Audio\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="DigitalAudioInput.cpp">
+      <Filter>Audio\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugin.cpp">
+      <Filter>Audio\Processing</Filter>
+    </ClCompile>
+    <ClCompile Include="GainPlugin.cpp">
+      <Filter>Audio\Processing</Filter>
+    </ClCompile>
+    <ClCompile Include="InputChannel.cpp">
+      <Filter>Audio\Channels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Channel.h" />
     <ClInclude Include="UDPClient.h">
       <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Channel.h">
+      <Filter>Audio\Channels</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioInput.h">
+      <Filter>Audio\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="DigitalAudioInput.h">
+      <Filter>Audio\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugin.h">
+      <Filter>Audio\Processing</Filter>
+    </ClInclude>
+    <ClInclude Include="GainPlugin.h">
+      <Filter>Audio\Processing</Filter>
+    </ClInclude>
+    <ClInclude Include="InputChannel.h">
+      <Filter>Audio\Channels</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Network">
       <UniqueIdentifier>{7e42105d-2dee-494e-bc20-4d5f8e30af4e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Util">
+      <UniqueIdentifier>{fcdf8fa7-c240-4709-a49c-7b92d4d1422b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Audio">
+      <UniqueIdentifier>{b0320bf8-62f4-41bb-bb69-a9a0138a6e27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{146376ce-e29a-4171-a00c-d0fd2c89a63b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Audio\Channels">
+      <UniqueIdentifier>{532c6caa-0f23-4308-bfa5-3a2061535bba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Audio\IO">
+      <UniqueIdentifier>{69c5e428-bdf8-420a-8444-f431770ef137}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Audio\Processing">
+      <UniqueIdentifier>{9a38fbb7-2fe6-4809-bc7b-cd110bd958c2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
   </ItemGroup>
 </Project>

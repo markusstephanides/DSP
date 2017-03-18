@@ -6,10 +6,11 @@ public:
 	~Channel();
 private:
 	// meta data
-	char* name;
+	const char* name;
+
 	// audio data
 	bool on;
 	float level; // in db
 	
-	 
+	// processing
 };

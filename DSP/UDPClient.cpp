@@ -3,31 +3,6 @@
 
 std::list<DigitalAudioInput*> UDPClient::registeredDigitalInputs = std::list<DigitalAudioInput*>();
 
-//UDPClient::UDPClient()
-//{
-//	this->registeredDigitalInputs = std::list<DigitalAudioInput*>();
-//}
-//
-//UDPClient::~UDPClient()
-//{
-//	for (DigitalAudioInput* input : registeredDigitalInputs)
-//	{
-//		delete input;
-//	}
-//
-//	delete instance;
-//}
-//
-//UDPClient* UDPClient::getInstance()
-//{
-//	if(instance == nullptr)
-//	{
-//		instance = new UDPClient();
-//	}
-//
-//	return instance;
-//}
-
 DigitalAudioInput* UDPClient::registerDigitalInput(int inputId)
 {
 	for(auto audio_input : registeredDigitalInputs)
@@ -107,12 +82,5 @@ void UDPClient::start()
 
 void UDPClient::deallocate()
 {
-	Logger::log("1");
-	for (DigitalAudioInput* input : registeredDigitalInputs)
-	{
-		Logger::log("jap");
-		delete input;
-		Logger::log("jap2");
-	}
-	Logger::log("2");
+	while (!registeredDigitalInputs.empty()) delete registeredDigitalInputs.front(), registeredDigitalInputs.pop_front();
 }

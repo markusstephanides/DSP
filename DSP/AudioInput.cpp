@@ -1,4 +1,5 @@
 ﻿#include "AudioInput.h"
+#include "Plugin.h"
 
 
 void AudioInput::addPlugin(Plugin plugin) const

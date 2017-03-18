@@ -1,31 +1,32 @@
 ﻿#include "UDPClient.h"
 #include "Logger.h"
 
+std::list<DigitalAudioInput*> UDPClient::registeredDigitalInputs = std::list<DigitalAudioInput*>();
 
-UDPClient::UDPClient()
-{
-	this->registeredDigitalInputs = std::list<DigitalAudioInput*>();
-}
-
-UDPClient::~UDPClient()
-{
-	for (DigitalAudioInput* input : registeredDigitalInputs)
-	{
-		delete input;
-	}
-
-	delete instance;
-}
-
-UDPClient* UDPClient::getInstance()
-{
-	if(instance == nullptr)
-	{
-		instance = new UDPClient();
-	}
-
-	return instance;
-}
+//UDPClient::UDPClient()
+//{
+//	this->registeredDigitalInputs = std::list<DigitalAudioInput*>();
+//}
+//
+//UDPClient::~UDPClient()
+//{
+//	for (DigitalAudioInput* input : registeredDigitalInputs)
+//	{
+//		delete input;
+//	}
+//
+//	delete instance;
+//}
+//
+//UDPClient* UDPClient::getInstance()
+//{
+//	if(instance == nullptr)
+//	{
+//		instance = new UDPClient();
+//	}
+//
+//	return instance;
+//}
 
 DigitalAudioInput* UDPClient::registerDigitalInput(int inputId)
 {
@@ -106,5 +107,9 @@ void UDPClient::start()
 
 void UDPClient::deallocate()
 {
-	delete getInstance();
+	for (DigitalAudioInput* input : registeredDigitalInputs)
+	{
+		delete input;
+	}
+	//delete getInstance();
 }

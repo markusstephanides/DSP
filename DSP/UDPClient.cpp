@@ -33,6 +33,7 @@ void die(const char *s)
 void UDPClient::start()
 {
 	Logger::log("1");
+	std::cout << "Current thread id: " << std::this_thread::get_id() << "\n";
 	async(std::launch::async, listen);
 
 }
@@ -51,6 +52,7 @@ void UDPClient::deallocate()
 
 void UDPClient::listen()
 {
+	std::cout << "Current thread id: " << std::this_thread::get_id() << "\n";
 	Logger::log("2");
 	struct sockaddr_in si_me, si_other;
 

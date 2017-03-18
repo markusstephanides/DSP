@@ -5,9 +5,9 @@ std::list<DigitalAudioInput*> UDPClient::registeredDigitalInputs = std::list<Dig
 
 DigitalAudioInput* UDPClient::registerDigitalInput(int inputId)
 {
-	for(auto audio_input : registeredDigitalInputs)
+	for (auto audio_input : registeredDigitalInputs)
 	{
-		if(audio_input->getInputId() == inputId)
+		if (audio_input->getInputId() == inputId)
 		{
 			// there is already a digital input with that inputId
 			return nullptr;
@@ -83,6 +83,7 @@ void UDPClient::start()
 void UDPClient::deallocate()
 {
 	Logger::log("Before");
-	while (!registeredDigitalInputs.empty()) delete registeredDigitalInputs.front(), registeredDigitalInputs.pop_front();
+
+	for (auto &it : registeredDigitalInputs) delete it; registeredDigitalInputs.clear();
 	Logger::log("After");
 }

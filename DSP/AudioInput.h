@@ -5,9 +5,6 @@
 
 class AudioInput
 {
-protected:
-	AudioInput();
-	~AudioInput() = default;
 public:
 	virtual void read(byte[]);
 	void addPlugin(Plugin) const;
@@ -17,6 +14,8 @@ private:
 	bool enabled;
 
 protected:
+	AudioInput();
+	~AudioInput();
 	std::list<Plugin> processingPlugins;
 	std::list<InputChannel> listeningChannels;
 	

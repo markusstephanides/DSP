@@ -1,6 +1,32 @@
 ﻿#include "UDPClient.h"
 #include "Logger.h"
 
+
+UDPClient::UDPClient()
+{
+	this->registeredDigitalInputs = std::list<DigitalAudioInput*>();
+}
+
+UDPClient::~UDPClient()
+{
+	for (DigitalAudioInput* input : registeredDigitalInputs)
+	{
+		delete input;
+	}
+
+	delete instance;
+}
+
+UDPClient* UDPClient::getInstance()
+{
+	if(instance == nullptr)
+	{
+		instance = new UDPClient();
+	}
+
+	return instance;
+}
+
 DigitalAudioInput* UDPClient::registerDigitalInput(int inputId)
 {
 	for(auto audio_input : registeredDigitalInputs)
@@ -25,8 +51,6 @@ void die(const char *s)
 
 void UDPClient::start()
 {
-	registeredDigitalInputs = std::list<DigitalAudioInput*>();
-
 	struct sockaddr_in si_me, si_other;
 
 	int s, i;
@@ -82,8 +106,5 @@ void UDPClient::start()
 
 void UDPClient::deallocate()
 {
-	for(DigitalAudioInput* input : registeredDigitalInputs)
-	{
-		delete input;
-	}
+	delete getInstance();
 }

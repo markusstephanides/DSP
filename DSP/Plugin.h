@@ -5,6 +5,6 @@ class Plugin
 {
 public:
 	Plugin();
-	virtual ~Plugin();
-	virtual void process(byte[]) = delete;
+	~Plugin();
+	virtual void process(byte[]);
 };

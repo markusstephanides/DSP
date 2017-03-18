@@ -34,7 +34,7 @@ void UDPClient::start()
 {
 	Logger::log("1");
 	std::cout << "Current thread id: " << std::this_thread::get_id() << "\n";
-	async(std::launch::async, listen);
+	std::thread(listen).detach();
 	Logger::log("AFASDFA");
 }
 

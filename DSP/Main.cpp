@@ -10,7 +10,7 @@ int main() {
 
 
 	// to test the audan interface, we create a digital audio input along with some channels
-	DigitalAudioInput* digital_audio_input = UDPClient::getInstance()->registerDigitalInput(0);
+	DigitalAudioInput* digital_audio_input = UDPClient::registerDigitalInput(0);
 	InputChannel channel = InputChannel();
 	digital_audio_input->addListeningChannel(channel);
 

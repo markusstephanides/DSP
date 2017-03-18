@@ -111,5 +111,4 @@ void UDPClient::deallocate()
 	{
 		delete input;
 	}
-	//delete getInstance();
 }

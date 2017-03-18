@@ -2,9 +2,9 @@
 
 DigitalAudioInput* UDPClient::registerDigitalInput(int inputId)
 {
-	for(DigitalAudioInput audio_input : registeredDigitalInputs)
+	for(DigitalAudioInput* audio_input : registeredDigitalInputs)
 	{
-		if(audio_input.getInputId() == inputId)
+		if(audio_input->getInputId() == inputId)
 		{
 			// there is already a digital input with that inputId
 			return nullptr;

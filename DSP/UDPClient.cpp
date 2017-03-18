@@ -7,7 +7,7 @@
 
 std::list<DigitalAudioInput*> UDPClient::registeredDigitalInputs = std::list<DigitalAudioInput*>();
 bool UDPClient::listening = false;
-int UDPClient::socket = -1;
+int UDPClient::socketId = -1;
 
 DigitalAudioInput* UDPClient::registerDigitalInput(int inputId)
 {

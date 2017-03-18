@@ -17,6 +17,12 @@ DigitalAudioInput* UDPClient::registerDigitalInput(int inputId)
 	return input;
 }
 
+void die(char *s)
+{
+	perror(s);
+	exit(1);
+}
+
 void UDPClient::start()
 {
 	struct sockaddr_in si_me, si_other;

@@ -5,14 +5,14 @@ void AudioInput::read(char[])
 {
 }
 
-void AudioInput::addPlugin(Plugin plugin) const
+void AudioInput::addPlugin(Plugin plugin)
 {
-	this->addPlugin(plugin);
+	this->processingPlugins.push_back(plugin);
 }
 
-void AudioInput::addListeningChannel(InputChannel channel) const
+void AudioInput::addListeningChannel(InputChannel channel)
 {
-	this->addListeningChannel(channel);
+	this->listeningChannels.push_back(channel);
 }
 
 AudioInput::AudioInput()

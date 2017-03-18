@@ -14,6 +14,7 @@ int main() {
 	DigitalAudioInput* digital_audio_input = UDPClient::registerDigitalInput(0);
 	InputChannel channel = InputChannel();
 	std::cout << digital_audio_input << std::endl;
+	std::cout << "Before pointer dings" << std::endl;
 	digital_audio_input->addListeningChannel(channel);
 
 	Logger::log("Waiting for user input...");

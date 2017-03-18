@@ -3,6 +3,7 @@
 #include <ostream>
 #include <iostream>
 #include <thread>
+#include <future>
 
 std::list<DigitalAudioInput*> UDPClient::registeredDigitalInputs = std::list<DigitalAudioInput*>();
 bool UDPClient::listening = false;
@@ -32,8 +33,8 @@ void die(const char *s)
 void UDPClient::start()
 {
 	Logger::log("1");
-	std::thread listeningThread(listen);
-	listeningThread.detach();
+	async(std::launch::async, listen);
+
 }
 
 void UDPClient::stop()

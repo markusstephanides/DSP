@@ -4,7 +4,7 @@
 
 void GainPlugin::process(byte audioData[])
 {
-	char* str = "";
+	const char* str = "";
 	sprintf_s(str, sizeof(str), "[GAIN] Processed %i bytes", Utils::arrayLength(audioData));
 	Logger::log(str);
 }

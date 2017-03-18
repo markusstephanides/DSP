@@ -30,6 +30,23 @@ void die(const char *s)
 
 void UDPClient::start()
 {
+	std::thread listeningThread(listen);
+}
+
+void UDPClient::stop()
+{
+	listening = false;
+}
+
+
+void UDPClient::deallocate()
+{
+	if (listening) stop();
+	registeredDigitalInputs.clear();
+}
+
+void UDPClient::listen(int socket)
+{
 	struct sockaddr_in si_me, si_other;
 
 	int s, i;
@@ -57,25 +74,10 @@ void UDPClient::start()
 		die("bind");
 	}
 
-	std::thread listeningThread(listen, s);
-}
 
-void UDPClient::stop()
-{
-	listening = false;
-}
-
-
-void UDPClient::deallocate()
-{
-	if (listening) stop();
-	registeredDigitalInputs.clear();
-}
-
-void UDPClient::listen(int socket)
-{
 	Logger::log("UDP client started listening");
 	listening = true;
+
 
 	//keep listening for data
 	while (listening)

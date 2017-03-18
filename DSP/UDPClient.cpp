@@ -1,5 +1,7 @@
 ﻿#include "UDPClient.h"
 #include "Logger.h"
+#include <ostream>
+#include <iostream>
 
 std::list<DigitalAudioInput*> UDPClient::registeredDigitalInputs = std::list<DigitalAudioInput*>();
 
@@ -84,6 +86,10 @@ void UDPClient::deallocate()
 {
 	Logger::log("Before");
 
-	for (auto &it : registeredDigitalInputs) delete it; registeredDigitalInputs.clear();
+	for (auto &it : registeredDigitalInputs) {
+		std::cout << it << std::endl;
+		delete it;
+	}
+	registeredDigitalInputs.clear();
 	Logger::log("After");
 }

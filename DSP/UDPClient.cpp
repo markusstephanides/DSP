@@ -27,8 +27,10 @@ void UDPClient::start()
 {
 	struct sockaddr_in si_me, si_other;
 
-	int s, i, slen = sizeof(si_other);
+	int s, i;
+	socklen_t slen = socklen_t(sizeof(si_other));
 	socklen_t recv_len;
+
 	char buf[BUFLEN];
 
 	//create a UDP socket

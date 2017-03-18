@@ -84,12 +84,5 @@ void UDPClient::start()
 
 void UDPClient::deallocate()
 {
-	Logger::log("Before");
-
-	for (auto &it : registeredDigitalInputs) {
-		std::cout << it->getInputId() << std::endl;
-		//delete it;
-	}
 	registeredDigitalInputs.clear();
-	Logger::log("After");
 }

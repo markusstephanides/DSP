@@ -19,8 +19,10 @@ int main() {
 
 	Logger::log("Waiting for user input...");
 	getchar();
+	Logger::log("3");
 	delete digital_audio_input;
+	Logger::log("4");
 	UDPClient::deallocate();
-	
+	Logger::log("5");
 	return 0;
 }

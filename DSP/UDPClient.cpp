@@ -40,6 +40,7 @@ void UDPClient::stop()
 {
 	listening = false;
 	close(socketId);
+
 }
 
 
@@ -61,7 +62,7 @@ void UDPClient::listen()
 	socklen_t slen = socklen_t(sizeof(si_other));
 	socklen_t recv_len;
 
-	char buf[BUFLEN];
+	byte buf[BUFLEN];
 
 	//create a UDP socket
 	if ((s = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
@@ -100,9 +101,18 @@ void UDPClient::listen()
 			die("recvfrom()");
 		}
 
+		int sum;
+
+		for(int i = 1; i < BUFLEN - 1; i++)
+		{
+			sum += buf[i];
+		}
+
+		printf("Received audio: %i\n", sum);
+
 		//print details of the client/peer and the data received
-		printf("Received packet from %s:%d\n", inet_ntoa(si_other.sin_addr), ntohs(si_other.sin_port));
-		printf("Data: %s\n", buf);
+		//printf("Received packet from %s:%d\n", inet_ntoa(si_other.sin_addr), ntohs(si_other.sin_port));
+		//printf("Data: %s\n", buf);
 
 		//now reply the client with the same data
 		if (sendto(s, buf, recv_len, 0, reinterpret_cast<struct sockaddr*>(&si_other), slen) == -1)

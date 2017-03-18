@@ -8,6 +8,6 @@ Plugin::~Plugin()
 {
 }
 
-void Plugin::process(char[])
+void Plugin::process(byte[])
 {
 }

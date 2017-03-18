@@ -8,14 +8,17 @@
 int main() {
 	Logger::log("Starting DSP firmware!");
 
-	UDPClient udp_client = UDPClient();
 
 	// to test the audan interface, we create a digital audio input along with some channels
-	DigitalAudioInput* digital_audio_input = udp_client.registerDigitalInput(0);
+	DigitalAudioInput* digital_audio_input = UDPClient::registerDigitalInput(0);
 	InputChannel channel = InputChannel();
 	digital_audio_input->addListeningChannel(channel);
 
 	Logger::log("Waiting for user input...");
+
+	delete digital_audio_input;
+	UDPClient::deallocate();
+
 	getchar();
 	
 	return 0;

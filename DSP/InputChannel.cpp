@@ -4,7 +4,8 @@
 
 void InputChannel::read(byte audioData[])
 {
-	const char* str = "";
-	sprintf_s(str, sizeof(str), "[INPUTCHANNEL] Read %i bytes", Utils::arrayLength(audioData));
+	char* str = "";
+	snprintf(str, sizeof(str), "[INPUTCHANNEL] Read %i bytes", Utils::arrayLength(audioData));
 	Logger::log(str);
+	delete str;
 }

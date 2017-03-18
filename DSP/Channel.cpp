@@ -6,5 +6,5 @@ Channel::Channel() {
 }
 
 Channel::~Channel() {
-
+	delete this->name;
 }

@@ -13,6 +13,7 @@ DigitalAudioInput* UDPClient::registerDigitalInput(int inputId)
 
 	// there are no digital inputs with that inputId
 	DigitalAudioInput* input = new DigitalAudioInput(inputId);
+	registeredDigitalInputs.push_back(input);
 	return input;
 }
 
@@ -67,4 +68,12 @@ void UDPClient::start()
 
 	close(s);
 	return 0;
+}
+
+void UDPClient::deallocate()
+{
+	for(DigitalAudioInput* input : registeredDigitalInputs)
+	{
+		delete input;
+	}
 }

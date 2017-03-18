@@ -10,3 +10,8 @@ void AudioInput::addListeningChannel(InputChannel channel) const
 {
 	this->addListeningChannel(channel);
 }
+
+AudioInput::~AudioInput()
+{
+	delete this->name;
+}

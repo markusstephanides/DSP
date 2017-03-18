@@ -11,7 +11,7 @@ int main() {
 
 
 	// to test the audan interface, we create a digital audio input along with some channels
-	DigitalAudioInput* digital_audio_input = UDPClient::registerDigitalInput(0);
+	DigitalAudioInput* digital_audio_input = UDPClient::registerDigitalInput(1337);
 	InputChannel channel = InputChannel();
 	std::cout << digital_audio_input << std::endl;
 	std::cout << "Before pointer dings" << std::endl;

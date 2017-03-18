@@ -46,7 +46,12 @@ void UDPClient::stop()
 
 void UDPClient::deallocate()
 {
-	if (listening) stop();
+	
+	if (listening) {
+		stop();
+		Logger::log("Deallocating UDPClient after it was stopped!");
+	}
+	else Logger::log("Deallocating UDPClient!");
 	registeredDigitalInputs.clear();
 }
 

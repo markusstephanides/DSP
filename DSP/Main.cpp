@@ -15,11 +15,11 @@ int main() {
 	digital_audio_input->addListeningChannel(channel);
 
 	Logger::log("Waiting for user input...");
-
+	getchar();
 	delete digital_audio_input;
 	UDPClient::deallocate();
 
-	getchar();
+	
 	
 	return 0;
 }

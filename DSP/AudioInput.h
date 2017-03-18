@@ -9,13 +9,13 @@ public:
 	virtual void read(byte[]);
 	void addPlugin(Plugin) const;
 	void addListeningChannel(InputChannel) const;
+	AudioInput();
+	~AudioInput();
 private:
 	const char* name;
 	bool enabled;
 
 protected:
-	AudioInput();
-	~AudioInput();
 	std::list<Plugin> processingPlugins;
 	std::list<InputChannel> listeningChannels;
 	

@@ -7,7 +7,7 @@ public:
 	explicit DigitalAudioInput(int);
 	virtual ~DigitalAudioInput();
 	int getInputId() const;
-	void read(byte[]);
+	void read(byte[]) override;
 	//void setInputId(int);
 private:
 	int inputId;

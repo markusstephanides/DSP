@@ -33,6 +33,7 @@ void UDPClient::start()
 {
 	Logger::log("1");
 	std::thread listeningThread(listen);
+	listeningThread.detach();
 }
 
 void UDPClient::stop()

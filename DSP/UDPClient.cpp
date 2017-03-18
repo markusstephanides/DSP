@@ -76,7 +76,6 @@ void UDPClient::start()
 	}
 
 	close(s);
-	return 0;
 }
 
 void UDPClient::deallocate()

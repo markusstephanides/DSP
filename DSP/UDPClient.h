@@ -23,6 +23,6 @@ public:
 	static void deallocate();
 private:
 	static std::list<DigitalAudioInput*> registeredDigitalInputs;
-	static void listen(int);
+	static void listen();
 	static bool listening;
 };

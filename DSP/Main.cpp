@@ -4,6 +4,7 @@
 #include "UI.h"
 #include "DigitalAudioInput.h"
 #include "UDPClient.h"
+#include <iostream>
 
 int main() {
 	Logger::log("Starting DSP firmware!");
@@ -12,6 +13,7 @@ int main() {
 	// to test the audan interface, we create a digital audio input along with some channels
 	DigitalAudioInput* digital_audio_input = UDPClient::registerDigitalInput(0);
 	InputChannel channel = InputChannel();
+	std::cout << digital_audio_input << std::endl;
 	digital_audio_input->addListeningChannel(channel);
 
 	Logger::log("Waiting for user input...");

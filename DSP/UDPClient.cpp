@@ -45,7 +45,7 @@ void UDPClient::deallocate()
 	registeredDigitalInputs.clear();
 }
 
-void UDPClient::listen(int socket)
+void UDPClient::listen()
 {
 	struct sockaddr_in si_me, si_other;
 

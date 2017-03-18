@@ -5,6 +5,7 @@
 #include <thread>
 
 std::list<DigitalAudioInput*> UDPClient::registeredDigitalInputs = std::list<DigitalAudioInput*>();
+bool UDPClient::listening = false;
 
 DigitalAudioInput* UDPClient::registerDigitalInput(int inputId)
 {

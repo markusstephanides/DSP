@@ -1,4 +1,5 @@
 ﻿#include "UDPClient.h"
+#include "Logger.h"
 
 DigitalAudioInput* UDPClient::registerDigitalInput(int inputId)
 {
@@ -17,10 +18,9 @@ DigitalAudioInput* UDPClient::registerDigitalInput(int inputId)
 	return input;
 }
 
-void die(char *s)
+void die(const char *s)
 {
-	perror(s);
-	exit(1);
+	Logger::log(s);
 }
 
 void UDPClient::start()

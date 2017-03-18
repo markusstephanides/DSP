@@ -5,6 +5,7 @@
 #include<stdlib.h> //exit(0);
 #include<arpa/inet.h>
 #include<sys/socket.h>
+#include <unistd.h>
 
 
 #define BUFLEN 512  //Max length of buffer

@@ -25,5 +25,5 @@ private:
 	static std::list<DigitalAudioInput*> registeredDigitalInputs;
 	static void listen();
 	static bool listening;
-	static int socket;
+	static int socketId;
 };

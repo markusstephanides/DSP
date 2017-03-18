@@ -39,7 +39,7 @@ void UDPClient::start()
 void UDPClient::stop()
 {
 	listening = false;
-	close(socket);
+	close(socketId);
 }
 
 
@@ -69,7 +69,7 @@ void UDPClient::listen()
 		die("socket");
 	}
 
-	socket = s;
+	socketId = s;
 
 	// zero out the structure
 	memset((char *)&si_me, 0, sizeof(si_me));

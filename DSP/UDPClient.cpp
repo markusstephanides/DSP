@@ -82,5 +82,7 @@ void UDPClient::start()
 
 void UDPClient::deallocate()
 {
+	Logger::log("Before");
 	while (!registeredDigitalInputs.empty()) delete registeredDigitalInputs.front(), registeredDigitalInputs.pop_front();
+	Logger::log("After");
 }

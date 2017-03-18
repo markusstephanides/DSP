@@ -3,7 +3,7 @@
 
 DigitalAudioInput* UDPClient::registerDigitalInput(int inputId)
 {
-	for(DigitalAudioInput* audio_input : registeredDigitalInputs)
+	for(auto audio_input : registeredDigitalInputs)
 	{
 		if(audio_input->getInputId() == inputId)
 		{
@@ -25,6 +25,8 @@ void die(const char *s)
 
 void UDPClient::start()
 {
+	registeredDigitalInputs = std::list<DigitalAudioInput*>();
+
 	struct sockaddr_in si_me, si_other;
 
 	int s, i;

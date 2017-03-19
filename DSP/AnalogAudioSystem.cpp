@@ -3,7 +3,7 @@
 #include "Logger.h"
 #include <string>
 
-#define SAMPLE_RATE   (44100)
+#define SAMPLE_RATE   (48000)
 #define FRAMES_PER_BUFFER (480)
 
 std::list<PaStream*> AnalogAudioSystem::openStreams = std::list<PaStream*>();

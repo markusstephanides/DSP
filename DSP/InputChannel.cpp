@@ -1,6 +1,12 @@
 ﻿#include "InputChannel.h"
 #include <stdio.h>
 #include "Logger.h"
+#include "AnalogAudioOutput.h"
+
+InputChannel::InputChannel()
+{
+	output_ = AnalogAudioOutput(1);
+}
 
 void InputChannel::read(byte audioData[])
 {
@@ -12,4 +18,6 @@ void InputChannel::read(byte audioData[])
 	}
 
 	printf("Sum: %i\n", sum);
+	output_.write(audioData);
+
 }

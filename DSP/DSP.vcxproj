@@ -117,6 +117,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AnalogAudioOutput.cpp" />
+    <ClCompile Include="AnalogAudioSystem.cpp" />
     <ClCompile Include="AudioInput.cpp" />
     <ClCompile Include="AudioOutput.cpp" />
     <ClCompile Include="Channel.cpp" />
@@ -132,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnalogAudioOutput.h" />
+    <ClInclude Include="AnalogAudioSystem.h" />
     <ClInclude Include="AudioInput.h" />
     <ClInclude Include="AudioOutput.h" />
     <ClInclude Include="Channel.h" />

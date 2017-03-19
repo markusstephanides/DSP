@@ -38,6 +38,9 @@
     <ClCompile Include="AnalogAudioOutput.cpp">
       <Filter>Audio\IO</Filter>
     </ClCompile>
+    <ClCompile Include="AnalogAudioSystem.cpp">
+      <Filter>Audio\AudioSystems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UDPClient.h">
@@ -76,6 +79,9 @@
     <ClInclude Include="AnalogAudioOutput.h">
       <Filter>Audio\IO</Filter>
     </ClInclude>
+    <ClInclude Include="AnalogAudioSystem.h">
+      <Filter>Audio\AudioSystems</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Network">
@@ -98,6 +104,9 @@
     </Filter>
     <Filter Include="Audio\Processing">
       <UniqueIdentifier>{9a38fbb7-2fe6-4809-bc7b-cd110bd958c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Audio\AudioSystems">
+      <UniqueIdentifier>{2b567310-0eb1-4aae-91dd-ad959607f306}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

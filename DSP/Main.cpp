@@ -19,7 +19,7 @@ int main() {
 	InputChannel channel = InputChannel();
 	Logger::log("3");
 	printf("After 3\n");
-	digital_audio_input->addListeningChannel(channel);
+	//digital_audio_input->addListeningChannel(channel);
 	printf("After call\n");
 	Logger::log("4");
 	UDPClient::start();

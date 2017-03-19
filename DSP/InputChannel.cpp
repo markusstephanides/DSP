@@ -13,6 +13,7 @@ void InputChannel::read(byte audioData[])
 	}
 	Logger::log("7");
 	char* str = nullptr;
+	Logger::log("7.1");
 	snprintf(str, sizeof(str), "%i\n", sum);
 	Logger::log("8");
 	Logger::log(str);

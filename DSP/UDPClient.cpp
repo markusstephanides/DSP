@@ -92,12 +92,13 @@ void UDPClient::listen()
 	//keep listening for data
 	while (listening)
 	{
-
+		printf("A\n");
 		//try to receive some data, this is a blocking call
 		if ((recv_len = recvfrom(s, buf, BUFLEN, 0, reinterpret_cast<struct sockaddr*>(&si_other), &slen)) == -1)
 		{
 			die("recvfrom()");
 		}
+		printf("B\n");
 
 		int pktId = buf[0];
 		

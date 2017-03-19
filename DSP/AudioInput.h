@@ -11,12 +11,12 @@ public:
 	void addListeningChannel(InputChannel);
 	AudioInput();
 	virtual ~AudioInput();
+	std::list<Plugin> processingPlugins;
+	std::list<InputChannel> listeningChannels;
 private:
 	const char* name;
 	bool enabled;
 
-protected:
-	std::list<Plugin> processingPlugins;
-	std::list<InputChannel> listeningChannels;
+	
 	
 };

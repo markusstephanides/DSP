@@ -19,7 +19,7 @@ int main() {
 	InputChannel channel = InputChannel();
 	Logger::log("3");
 	printf("After 3\n");
-	printf("ID:%i", digital_audio_input->getInputId());
+	
 	digital_audio_input->addListeningChannel(channel);
 	printf("After call\n");
 	Logger::log("4");

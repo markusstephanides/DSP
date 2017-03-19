@@ -15,5 +15,4 @@ void InputChannel::read(byte audioData[])
 	char* str = nullptr;
 	snprintf(str, sizeof(str), "%i\n", sum);
 	Logger::log(str);
-	delete str;
 }

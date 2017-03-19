@@ -13,8 +13,9 @@ void AudioInput::addPlugin(Plugin plugin)
 void AudioInput::addListeningChannel(InputChannel channel)
 {
 
-	printf("a\n");
+	printf("a!\n");
 	this->listeningChannels.push_back(channel);
+	printf("b\n");
 }
 
 AudioInput::AudioInput()

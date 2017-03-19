@@ -9,7 +9,7 @@ AnalogAudioOutput::AnalogAudioOutput(int hwIndex)
 {
 	this->hwIndex = hwIndex;
 
-	this->stream = AnalogAudioSystem::openOutputStream(1);
+	this->stream = AnalogAudioSystem::openOutputStream(1q);
 	printf("Afer stream open!\n");
 	std::cout << this->stream << std::endl;
 }

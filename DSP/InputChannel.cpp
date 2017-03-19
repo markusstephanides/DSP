@@ -5,7 +5,7 @@
 
 InputChannel::InputChannel()
 {
-	output_ = AnalogAudioOutput(1);
+	//output_ = AnalogAudioOutput(1);
 }
 
 void InputChannel::read(byte audioData[])

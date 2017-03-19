@@ -15,7 +15,6 @@ void AnalogAudioSystem::init()
 	if (err != paNoError)
 	{
 		printf("PortAudio error: %s\n", Pa_GetErrorText(err));
-		return;
 	}
 }
 

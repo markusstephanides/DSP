@@ -2,12 +2,16 @@
 #include "AnalogAudioSystem.h"
 
 #include <cstdio>
+#include <ostream>
+#include <iostream>
 
 AnalogAudioOutput::AnalogAudioOutput(int hwIndex)
 {
 	this->hwIndex = hwIndex;
 
 	this->stream = AnalogAudioSystem::openOutputStream(1, nullptr, this);
+	printf("Afer stream open!\n");
+	std::cout << this->stream << std::endl;
 }
 
 //int AnalogAudioOutput::patestCallback(const void *inputBuffer, void *outputBuffer,

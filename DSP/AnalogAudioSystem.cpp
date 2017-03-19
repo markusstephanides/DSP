@@ -72,6 +72,8 @@ PaStream* AnalogAudioSystem::openOutputStream(int hwIndex, PaStreamCallback *cal
 		callback,
 		context);
 
+	printf("Stream open!\n");
+
 	if (err != paNoError)
 	{
 		printf("PortAudio error: %s\n", Pa_GetErrorText(err));
@@ -79,6 +81,7 @@ PaStream* AnalogAudioSystem::openOutputStream(int hwIndex, PaStreamCallback *cal
 	}
 
 	Pa_StartStream(stream);
+	printf("Stream started!\n");
 
 	return stream;
 

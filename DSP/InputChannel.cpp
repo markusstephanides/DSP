@@ -3,7 +3,7 @@
 #include "Logger.h"
 #include "AnalogAudioOutput.h"
 
-InputChannel::InputChannel()
+InputChannel::InputChannel(const char* name): Channel(name)
 {
 	//output_ = AnalogAudioOutput(1);
 }

@@ -16,10 +16,9 @@ int main() {
 	Logger::log("1");
 	DigitalAudioInput* digital_audio_input = UDPClient::registerDigitalInput(10);
 	Logger::log("2");
-	InputChannel channel = InputChannel();
+	InputChannel channel = InputChannel("PCSounds");
 	Logger::log("3");
 	printf("After 3\n");
-	
 	digital_audio_input->addListeningChannel(channel);
 	printf("After call\n");
 	Logger::log("4");

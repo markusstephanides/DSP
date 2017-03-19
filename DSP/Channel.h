@@ -2,7 +2,7 @@
 
 class Channel {
 public:
-	Channel();
+	Channel(const char*);
 	~Channel();
 private:
 	// meta data

@@ -38,4 +38,5 @@ void AnalogAudioSystem::shutdown()
 	Logger::log("SHUTDOWN2!");
 	if (err != paNoError)
 		printf("PortAudio error: %s\n", Pa_GetErrorText(err));
+	Logger::log("SHUTDOWN3!");
 }

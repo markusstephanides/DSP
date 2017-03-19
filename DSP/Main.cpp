@@ -21,8 +21,12 @@ int main() {
 
 	Logger::log("Waiting for user input...");
 	getchar();
+	Logger::log("A");
 	AnalogAudioSystem::shutdown();
+	Logger::log("B");
 	delete digital_audio_input;
+	Logger::log("C");
 	UDPClient::deallocate();
+	Logger::log("D");
 	return 0;
 }

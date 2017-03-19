@@ -5,5 +5,5 @@
 class Utils
 {
 public:
-	static int arrayLength(byte[])
+	static int arrayLength(byte[]);
 };

@@ -10,13 +10,13 @@ InputChannel::InputChannel(const char* name): Channel(name)
 
 void InputChannel::read(byte audioData[])
 {
-	int sum = 0;
+	/*int sum = 0;
 	for (int i = 0; i < 1920; i++)
 	{
 		sum += audioData[i];
-	}
+	}*/
 
-	printf("Length: %i - Sum::: %i\n", 1920, sum);
+	//printf("Length: %i - Sum::: %i\n", 1920, sum);
 	output_->write(audioData);
 
 }

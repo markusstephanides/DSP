@@ -20,6 +20,8 @@ AnalogAudioOutput::~AnalogAudioOutput()
 
 void AnalogAudioOutput::write(byte audioData[])
 {
+
+
 	printf("Write!\n");
 	Pa_WriteStream(this->stream, audioData, 480);
 }

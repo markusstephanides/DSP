@@ -11,8 +11,7 @@ InputChannel::InputChannel(const char* name): Channel(name)
 void InputChannel::read(byte audioData[])
 {
 	int sum = 0;
-
-	for (int i = 0; i < Utils::arrayLength(audioData); i++)
+	for (int i = 0; i < (sizeof(audioData) / sizeof(audioData[0])); i++)
 	{
 		sum += audioData[i];
 	}

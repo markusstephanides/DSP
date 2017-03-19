@@ -131,7 +131,6 @@ void UDPClient::processAudioDataPacket(byte buf[])
 	int channelId = buf[BUFLEN - 1];
 	//printf("Received audio data packet for channel: %i", channelId);
 	byte audioData[BUFLEN - 2];
-	printf("Received packet %i\n", (sizeof(audioData) / sizeof(audioData[0])));
 
 	for(int i = 0; i < (BUFLEN-2); i++)
 	{

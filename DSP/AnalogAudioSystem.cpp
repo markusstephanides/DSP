@@ -6,7 +6,7 @@
 #define SAMPLE_RATE   (44100)
 #define FRAMES_PER_BUFFER (64)
 
-std::list<PaStream*> openStreams = std::list<PaStream*>();
+std::list<PaStream*> AnalogAudioSystem::openStreams = std::list<PaStream*>();
 
 void AnalogAudioSystem::init()
 {

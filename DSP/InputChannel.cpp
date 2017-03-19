@@ -18,6 +18,6 @@ void InputChannel::read(byte audioData[])
 	}
 
 	printf("Sum: %i\n", sum);
-	output_.write(audioData);
+	//output_.write(audioData);
 
 }

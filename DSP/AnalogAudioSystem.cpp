@@ -1,5 +1,6 @@
 ﻿#include "AnalogAudioSystem.h"
 #include <cstdio>
+#include "Logger.h"
 
 void AnalogAudioSystem::init()
 {
@@ -24,7 +25,7 @@ void AnalogAudioSystem::init()
 	for (int i = 0; i < numDevices; i++)
 	{
 		deviceInfo = Pa_GetDeviceInfo(i);
-		printf("Device Name: %s", deviceInfo->name);
+		printf("Device Name: %s\n", deviceInfo->name);
 	}
 
 
@@ -32,6 +33,7 @@ void AnalogAudioSystem::init()
 
 void AnalogAudioSystem::shutdown()
 {
+	Logger::log("SHUTDOWN!");
 	PaError err = Pa_Terminate();
 	if (err != paNoError)
 		printf("PortAudio error: %s\n", Pa_GetErrorText(err));

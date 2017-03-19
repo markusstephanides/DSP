@@ -2,6 +2,7 @@
 #include "AudioOutput.h"
 #include "../PortAudio/portaudio.h"
 
+
 class AnalogAudioOutput : public AudioOutput
 {
 public:

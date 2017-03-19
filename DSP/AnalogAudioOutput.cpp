@@ -1,6 +1,8 @@
 ﻿#include "AnalogAudioOutput.h"
 #include "AnalogAudioSystem.h"
 
+#include <cstdio>
+
 AnalogAudioOutput::AnalogAudioOutput(int hwIndex)
 {
 	this->hwIndex = hwIndex;

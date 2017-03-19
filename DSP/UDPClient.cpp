@@ -98,7 +98,7 @@ void UDPClient::listen()
 		{
 			die("recvfrom()");
 		}
-		printf("B\n");
+		printf("B %i\n", buf[0]);
 
 		int pktId = buf[0];
 		

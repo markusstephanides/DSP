@@ -19,7 +19,7 @@ void AnalogAudioSystem::init()
 	}
 }
 
-PaStream* AnalogAudioSystem::openOutputStream(int hwIndex, PaStreamCallback *callback, void* context)
+PaStream* AnalogAudioSystem::openOutputStream(int hwIndex)
 {
 	// List available devices
 	int numDevices;
@@ -60,7 +60,7 @@ PaStream* AnalogAudioSystem::openOutputStream(int hwIndex, PaStreamCallback *cal
 	outputParameters.suggestedLatency = Pa_GetDeviceInfo(outputParameters.device)->defaultLowOutputLatency;
 	outputParameters.hostApiSpecificStreamInfo = nullptr;
 
-	printf("LOW OUTPUT LATENCY: %f", outputParameters.suggestedLatency);
+	printf("LOW OUTPUT LATENCY: %f\n", outputParameters.suggestedLatency);
 
 	err = Pa_OpenStream(
 		&stream,
@@ -69,8 +69,8 @@ PaStream* AnalogAudioSystem::openOutputStream(int hwIndex, PaStreamCallback *cal
 		SAMPLE_RATE,
 		FRAMES_PER_BUFFER,
 		paClipOff,      /* we won't output out of range samples so don't bother clipping them */
-		callback,
-		context);
+		nullptr,
+		nullptr);
 
 	printf("Stream open!\n");
 

@@ -23,5 +23,4 @@ AudioInput::AudioInput()
 
 AudioInput::~AudioInput()
 {
-	delete this->name;
 }

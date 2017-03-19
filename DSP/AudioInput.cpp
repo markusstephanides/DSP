@@ -17,6 +17,7 @@ void AudioInput::addListeningChannel(InputChannel channel)
 
 AudioInput::AudioInput()
 {
+	this->listeningChannels = std::list<InputChannel>();
 }
 
 AudioInput::~AudioInput()

@@ -1,8 +1,8 @@
 #include "Channel.h"
 #include <iostream>
 
-Channel::Channel() {
-	
+Channel::Channel(): name(nullptr), on(false), level(0)
+{
 }
 
 Channel::~Channel() {

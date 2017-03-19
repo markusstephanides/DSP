@@ -18,6 +18,7 @@ int main() {
 	Logger::log("2");
 	InputChannel channel = InputChannel();
 	Logger::log("3");
+	std::cout << digital_audio_input << std::endl;
 	digital_audio_input->addListeningChannel(channel);
 	Logger::log("4");
 	UDPClient::start();

@@ -1,6 +1,7 @@
 ﻿#include "AudioOutput.h"
 #include <stdio.h>
-AudioOutput::AudioOutput()
+
+AudioOutput::AudioOutput(const char* name) : name(name), enabled(false)
 {
 }
 

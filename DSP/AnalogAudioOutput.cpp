@@ -5,7 +5,7 @@
 #include <ostream>
 #include <iostream>
 
-AnalogAudioOutput::AnalogAudioOutput(int hwIndex)
+AnalogAudioOutput::AnalogAudioOutput(int hwIndex, const char* name) : AudioOutput(name)
 {
 	this->hwIndex = hwIndex;
 

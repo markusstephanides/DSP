@@ -2,6 +2,7 @@
 #include "Channel.h"
 #include "Utils.h"
 #include "AudioOutput.h"
+#include "AnalogAudioOutput.h"
 
 class InputChannel : public Channel
 {
@@ -10,5 +11,5 @@ public:
 	void read(byte audioData[]);
 
 private: 
-	AudioOutput output_;
+	AnalogAudioOutput output_;
 };

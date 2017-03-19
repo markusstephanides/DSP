@@ -5,7 +5,7 @@
 
 InputChannel::InputChannel(const char* name): Channel(name)
 {
-	output_ = static_cast<AudioOutput>(AnalogAudioOutput(1));
+	output_ = AnalogAudioOutput(1, "DX2000");
 }
 
 void InputChannel::read(byte audioData[])

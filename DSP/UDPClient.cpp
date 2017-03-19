@@ -100,7 +100,7 @@ void UDPClient::listen()
 		}
 
 		int pktId = buf[0];
-		printf("Pktid: %i", pktId);
+		
 		switch (pktId)
 		{
 		case 1:

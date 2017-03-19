@@ -6,7 +6,7 @@
 class AudioOutput
 {
 public:
-	AudioOutput(const char*);
+	explicit AudioOutput(const char*);
 	virtual ~AudioOutput();
 	void addPlugin(Plugin);
 	virtual void write(byte[]);

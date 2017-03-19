@@ -16,7 +16,7 @@ void InputChannel::read(byte audioData[])
 		sum += audioData[i];
 	}
 
-	printf("Length: %i - Sum::: %i\n", Utils::arrayLength(audioData), sum);
+	printf("Length: %i - Sum::: %i\n", (sizeof(audioData) / sizeof(audioData[0])), sum);
 	output_->write(audioData);
 
 }

@@ -139,10 +139,8 @@ void UDPClient::processAudioDataPacket(byte buf[])
 
 	for (DigitalAudioInput* input : registeredDigitalInputs)
 	{
-		printf("IDID %i , CHID %i\n", input->getInputId(), channelId);
 		if(input->getInputId() == channelId)
 		{
-			Logger::log("1");
 			input->read(audioData);
 			return;
 		}

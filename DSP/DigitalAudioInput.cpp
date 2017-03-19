@@ -18,14 +18,11 @@ int DigitalAudioInput::getInputId() const
 
 void DigitalAudioInput::read(byte audioData[])
 {
-	Logger::log("2");
 	// first process the audio signals
 	for (Plugin plugin : this->processingPlugins)
 	{
 		plugin.process(audioData);
 	}
-
-	Logger::log("3");
 
 	// then send the processed signals to the channels
 	for (InputChannel channel : this->listeningChannels)
@@ -33,6 +30,5 @@ void DigitalAudioInput::read(byte audioData[])
 		channel.read(audioData);
 	}
 
-	Logger::log("4");
 }
 

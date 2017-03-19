@@ -10,7 +10,7 @@
 int main() {
 	Logger::log("Starting DSP firmware!");
 
-	//AnalogAudioSystem::init();
+	AnalogAudioSystem::init();
 
 	// to test the audan interface, we create a digital audio input along with some channels
 	Logger::log("1");

@@ -4,6 +4,7 @@
 
 void InputChannel::read(byte audioData[])
 {
+	Logger::log("5");
 	int sum = 0;
 
 	for (int i = 0; i < Utils::arrayLength(audioData); i++)

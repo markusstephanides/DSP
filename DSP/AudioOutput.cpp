@@ -1,5 +1,5 @@
 ﻿#include "AudioOutput.h"
-
+#include <stdio.h>
 AudioOutput::AudioOutput()
 {
 }
@@ -8,6 +8,7 @@ AudioOutput::~AudioOutput()
 {
 }
 
-void AudioOutput::write(char[])
+void AudioOutput::write(byte[])
 {
+	printf("BASE WRITE!\n");
 }

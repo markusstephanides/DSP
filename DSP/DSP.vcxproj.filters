@@ -32,6 +32,12 @@
     <ClCompile Include="InputChannel.cpp">
       <Filter>Audio\Channels</Filter>
     </ClCompile>
+    <ClCompile Include="AudioOutput.cpp">
+      <Filter>Audio\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="AnalogAudioOutput.cpp">
+      <Filter>Audio\IO</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UDPClient.h">
@@ -63,6 +69,12 @@
     </ClInclude>
     <ClInclude Include="InputChannel.h">
       <Filter>Audio\Channels</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioOutput.h">
+      <Filter>Audio\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="AnalogAudioOutput.h">
+      <Filter>Audio\IO</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

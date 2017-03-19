@@ -103,7 +103,7 @@ void UDPClient::listen()
 		printf("Pktid: %i", pktId);
 		switch (pktId)
 		{
-		case 0:
+		case 1:
 			processAudioDataPacket(buf);
 			break;
 		default: break;

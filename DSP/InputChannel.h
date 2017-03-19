@@ -11,5 +11,5 @@ public:
 	void read(byte audioData[]);
 
 private: 
-	AnalogAudioOutput output_;
+	AnalogAudioOutput* output_;
 };

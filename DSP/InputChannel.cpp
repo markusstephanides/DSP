@@ -5,7 +5,7 @@
 
 InputChannel::InputChannel(const char* name): Channel(name)
 {
-	output_ = AnalogAudioOutput(1, "DX2000");
+	output_ = new AnalogAudioOutput(1, "DX2000");
 }
 
 void InputChannel::read(byte audioData[])
@@ -18,6 +18,6 @@ void InputChannel::read(byte audioData[])
 	}
 
 	printf("Sum::: %i\n", sum);
-	output_.write(audioData);
+	output_->write(audioData);
 
 }

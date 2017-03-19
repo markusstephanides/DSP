@@ -26,4 +26,5 @@ private:
 	static void listen();
 	static bool listening;
 	static int socketId;
+	static void processAudioDataPacket(byte[]);
 };

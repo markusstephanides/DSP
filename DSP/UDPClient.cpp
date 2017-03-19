@@ -99,25 +99,49 @@ void UDPClient::listen()
 			die("recvfrom()");
 		}
 
-		int sum = 0;
+		int pktId = buf[0];
 
-		for(int i = 1; i < BUFLEN - 1; i++)
+		switch (pktId)
 		{
-			sum += buf[i];
+		case 0:
+
+		default:;
 		}
 
-		printf("Received audio: %i\n", sum);
+
 
 		//print details of the client/peer and the data received
 		//printf("Received packet from %s:%d\n", inet_ntoa(si_other.sin_addr), ntohs(si_other.sin_port));
 		//printf("Data: %s\n", buf);
 
 		//now reply the client with the same data
-		if (sendto(s, buf, recv_len, 0, reinterpret_cast<struct sockaddr*>(&si_other), slen) == -1)
+		/*if (sendto(s, buf, recv_len, 0, reinterpret_cast<struct sockaddr*>(&si_other), slen) == -1)
 		{
 			die("sendto()");
-		}
+		}*/
 	}
 
 	Logger::log("UDP client stopped listening");
+}
+
+void UDPClient::processAudioDataPacket(byte buf[])
+{
+	// the buffer has the packet type at index 0, the channel id at the last index
+	int channelId = buf[BUFLEN - 1];
+	printf("Received audio data packet for channel: %i", channelId);
+	byte audioData[BUFLEN - 2];
+
+	for(int i = 0; i < (BUFLEN-2); i++)
+	{
+		audioData[i] = buf[i + 1];
+	}
+
+	for (DigitalAudioInput* input : registeredDigitalInputs)
+	{
+		if(input->getInputId() == channelId)
+		{
+			input->read(audioData);
+			return;
+		}
+	}
 }

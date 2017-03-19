@@ -27,7 +27,7 @@ PaStream* AnalogAudioSystem::openOutputStream(int hwIndex, PaStreamCallback *cal
 	if (numDevices < 0)
 	{
 		printf("ERROR: Pa_CountDevices returned 0x%x\n", numDevices);
-		return;
+		return nullptr;
 	}
 
 	const PaDeviceInfo *deviceInfo;

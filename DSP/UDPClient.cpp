@@ -129,6 +129,7 @@ void UDPClient::listen()
 
 void UDPClient::processAudioDataPacket(byte buf[])
 {
+	printf("1\n");
 	// the buffer has the packet type at index 0, the channel id at the last index
 	byte channelId = buf[Constants::NET_BUFFER_SIZE - 1];
 	//printf("Received audio data packet for channel: %i", channelId);
@@ -139,11 +140,12 @@ void UDPClient::processAudioDataPacket(byte buf[])
 		audioData[i] = buf[i + 1];
 	}
 
-
+	printf("2\n");
 	for (DigitalAudioInput* input : registeredDigitalInputs)
 	{
 		if(input->getInputId() == channelId)
 		{
+			printf("3\n");
 			input->read(audioData);
 			return;
 		}

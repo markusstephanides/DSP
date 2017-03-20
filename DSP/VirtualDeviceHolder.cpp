@@ -1,5 +1,7 @@
 ﻿#include "VirtualDeviceHolder.h"
 #include "UDPClient.h"
+#include "Logger.h"
+#include <iostream>
 
 std::list<InputChannel*> VirtualDeviceHolder::inputChannels = std::list<InputChannel*>();
 std::list<OutputChannel*> VirtualDeviceHolder::outputChannels = std::list<OutputChannel*>();
@@ -61,8 +63,13 @@ AudioInput* VirtualDeviceHolder::getAudioInput(const char* name)
 
 AudioOutput* VirtualDeviceHolder::getAudioOutput(const char* name)
 {
+	Logger::log("Search");
 	for (AudioOutput* audioOutput : audioOutputs)
 	{
+		Logger::log("Search  1  audioOutput->getName() ");
+		std::cout << audioOutput->getName() << std::endl;
+		Logger::log("Search  2  name ");
+		std::cout << name << std::endl;
 		if (audioOutput->getName() == name) return audioOutput;
 	}
 

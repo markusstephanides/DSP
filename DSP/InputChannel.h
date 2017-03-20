@@ -9,7 +9,6 @@ class InputChannel : public Channel
 {
 public:
 	explicit InputChannel(const char*);
-	explicit InputChannel(AudioInput*);
 	void read(byte audioData[]);
 
 private: 

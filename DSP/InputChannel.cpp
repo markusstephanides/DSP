@@ -9,11 +9,6 @@ InputChannel::InputChannel(const char* name): Channel(name)
 	output_ = new AnalogAudioOutput(1, "DX2000");
 }
 
-InputChannel::InputChannel(AudioInput* input) : Channel(input->getName())
-{
-	input->addListeningChannel(this);
-}
-
 void InputChannel::read(byte audioData[])
 {
 	int sum = 0;

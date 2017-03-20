@@ -8,35 +8,16 @@ std::list<AudioOutput*> VirtualDeviceHolder::audioOutputs = std::list<AudioOutpu
 
 bool VirtualDeviceHolder::init()
 {
-	// Create inputs - TODO This should be configureable
-	audioInputs.push_back(UDPClient::registerDigitalInput(0, "Player A"));
-	audioInputs.push_back(UDPClient::registerDigitalInput(1, "Player B"));
-	audioInputs.push_back(UDPClient::registerDigitalInput(2, "Cart 1"));
-	audioInputs.push_back(UDPClient::registerDigitalInput(3, "Cart 2"));
-	audioInputs.push_back(UDPClient::registerDigitalInput(4, "Cart 3"));
-	audioInputs.push_back(UDPClient::registerDigitalInput(5, "Cart 4"));
-	audioInputs.push_back(UDPClient::registerDigitalInput(10, "PC Sounds"));
-	audioInputs.push_back(UDPClient::registerDigitalInput(11, "PPFL"));
-	audioInputs.push_back(UDPClient::registerDigitalInput(12, "Voice"));
-
-	// Create input channels
-	inputChannels.push_back(new InputChannel(getAudioInput("Player A")));
-	inputChannels.push_back(new InputChannel(getAudioInput("Player B")));
-	inputChannels.push_back(new InputChannel(getAudioInput("Cart 1")));
-	inputChannels.push_back(new InputChannel(getAudioInput("Cart 2")));
-	inputChannels.push_back(new InputChannel(getAudioInput("Cart 3")));
-	inputChannels.push_back(new InputChannel(getAudioInput("PC Sounds")));
-	inputChannels.push_back(new InputChannel(getAudioInput("PPFL")));
-	inputChannels.push_back(new InputChannel(getAudioInput("Voice")));
-
-	inputChannels.push_back(new InputChannel(getAudioInput("Player A")));
-	inputChannels.push_back(new InputChannel(getAudioInput("Player B")));
-	inputChannels.push_back(new InputChannel(getAudioInput("Cart 1")));
-	inputChannels.push_back(new InputChannel(getAudioInput("Cart 2")));
-	inputChannels.push_back(new InputChannel(getAudioInput("Cart 3")));
-	inputChannels.push_back(new InputChannel(getAudioInput("PC Sounds")));
-	inputChannels.push_back(new InputChannel(getAudioInput("PPFL")));
-	inputChannels.push_back(new InputChannel(getAudioInput("Voice")));
+	// Create default inputs channels
+	createDigitalInputChannelOutputChannel(0, "Player A");
+	createDigitalInputChannelOutputChannel(1, "Player B");
+	createDigitalInputChannelOutputChannel(2, "Cart 1");
+	createDigitalInputChannelOutputChannel(3, "Cart 2");
+	createDigitalInputChannelOutputChannel(4, "Cart 3");
+	createDigitalInputChannelOutputChannel(5, "Cart 4");
+	createDigitalInputChannelOutputChannel(10, "PC Sounds");
+	createDigitalInputChannelOutputChannel(11, "PPFL");
+	createDigitalInputChannelOutputChannel(12, "Voice");
 
 
 	// TODO Add MIC1 and MIC2 analog inputs
@@ -88,6 +69,7 @@ AudioOutput* VirtualDeviceHolder::getAudioOutput(const char* name)
 
 void VirtualDeviceHolder::createDigitalInputChannelOutputChannel(byte channelId, const char* name)
 {
+	inputChannels.push_back(new InputChannel(name));
 	audioInputs.push_back(UDPClient::registerDigitalInput(channelId, name));
-	
+	getAudioInput(name)->addListeningChannel(getInputChannel(name));
 }

@@ -4,6 +4,7 @@
 #include "AnalogAudioOutput.h"
 #include "Constants.h"
 #include "VirtualDeviceHolder.h"
+#include <iostream>
 
 InputChannel::InputChannel(const char* name): Channel(name)
 {
@@ -18,7 +19,8 @@ void InputChannel::read(byte audioData[])
 	}
 
 	//printf("Length: %i - Sum::: %i\n", 1920, sum);
-	Logger::log("Before out");
+	Logger::log("Before out!!!");
+	std::cout << VirtualDeviceHolder::getAudioOutput("Monitor") << std::endl;
 	VirtualDeviceHolder::getAudioOutput("Monitor")->write(audioData);
 	Logger::log("after out");
 

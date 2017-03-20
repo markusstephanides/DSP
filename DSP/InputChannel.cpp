@@ -3,10 +3,10 @@
 #include "Logger.h"
 #include "AnalogAudioOutput.h"
 #include "Constants.h"
+#include "VirtualDeviceHolder.h"
 
 InputChannel::InputChannel(const char* name): Channel(name)
 {
-	output_ = new AnalogAudioOutput(1, "DX2000");
 }
 
 void InputChannel::read(byte audioData[])
@@ -18,6 +18,6 @@ void InputChannel::read(byte audioData[])
 	}
 
 	//printf("Length: %i - Sum::: %i\n", 1920, sum);
-	output_->write(audioData);
+	VirtualDeviceHolder::getAudioOutput("Monitor")->write(audioData);
 
 }

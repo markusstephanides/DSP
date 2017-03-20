@@ -1,9 +1,7 @@
 ﻿#pragma once
 #include "Channel.h"
 #include "Utils.h"
-#include "AudioOutput.h"
 #include "AnalogAudioOutput.h"
-#include "AudioInput.h"
 
 class InputChannel : public Channel
 {

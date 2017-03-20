@@ -2,8 +2,8 @@
 #include "Utils.h"
 #include "Channel.h"
 #include "AudioOutput.h"
+#include "InputChannel.h"
 
-class InputChannel;
 
 class OutputChannel : public Channel
 {

@@ -14,6 +14,7 @@ bool VirtualDeviceHolder::init()
 	audioInputs.push_back(UDPClient::registerDigitalInput(2, "Cart 1"));
 	audioInputs.push_back(UDPClient::registerDigitalInput(3, "Cart 2"));
 	audioInputs.push_back(UDPClient::registerDigitalInput(4, "Cart 3"));
+	audioInputs.push_back(UDPClient::registerDigitalInput(5, "Cart 4"));
 	audioInputs.push_back(UDPClient::registerDigitalInput(10, "PC Sounds"));
 	audioInputs.push_back(UDPClient::registerDigitalInput(11, "PPFL"));
 	audioInputs.push_back(UDPClient::registerDigitalInput(12, "Voice"));

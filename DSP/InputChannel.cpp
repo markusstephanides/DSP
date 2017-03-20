@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "Logger.h"
 #include "AnalogAudioOutput.h"
+#include "Constants.h"
 
 InputChannel::InputChannel(const char* name): Channel(name)
 {
@@ -16,7 +17,7 @@ InputChannel::InputChannel(AudioInput* input) : Channel(input->getName())
 void InputChannel::read(byte audioData[])
 {
 	int sum = 0;
-	for (int i = 0; i < BUFSIZE; i++)
+	for (int i = 0; i < Constants::AUDIO_BUFFER_SIZE; i++)
 	{
 		sum += audioData[i];
 	}

@@ -8,6 +8,8 @@ std::list<AudioOutput*> VirtualDeviceHolder::audioOutputs = std::list<AudioOutpu
 
 bool VirtualDeviceHolder::init()
 {
+
+	audioOutputs.push_back(new AnalogAudioOutput(1, "Monitor"));
 	// Create default inputs channels
 	/*createDigitalInputChannelOutputChannel(0, "Player A");
 	createDigitalInputChannelOutputChannel(1, "Player B");
@@ -22,7 +24,7 @@ bool VirtualDeviceHolder::init()
 
 	// TODO Add MIC1 and MIC2 analog inputs
 
-	audioOutputs.push_back(new AnalogAudioOutput(1, "Monitor"));
+	
 
 	return true;
 }

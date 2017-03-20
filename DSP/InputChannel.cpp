@@ -18,8 +18,8 @@ void InputChannel::read(byte audioData[])
 	}
 
 	//printf("Length: %i - Sum::: %i\n", 1920, sum);
-	printf("before out\n");
+	Logger::log("Before out");
 	VirtualDeviceHolder::getAudioOutput("Monitor")->write(audioData);
-	printf("after out\n");
+	Logger::log("after out");
 
 }

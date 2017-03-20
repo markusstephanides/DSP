@@ -18,7 +18,7 @@ byte DigitalAudioInput::getInputId() const
 
 void DigitalAudioInput::read(byte audioData[])
 {
-	printf("4\n");
+	Logger::log("4");
 	// first process the audio signals
 	for (Plugin plugin : this->processingPlugins)
 	{
@@ -31,7 +31,7 @@ void DigitalAudioInput::read(byte audioData[])
 		channel->read(audioData);
 	}
 
-	printf("4.....\n");
+	Logger::log("4 end");
 
 }
 

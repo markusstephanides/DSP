@@ -26,7 +26,7 @@ bool VirtualDeviceHolder::init()
 
 	// TODO Add MIC1 and MIC2 analog inputs
 
-	
+
 
 	return true;
 }
@@ -35,7 +35,9 @@ InputChannel* VirtualDeviceHolder::getInputChannel(const char* name)
 {
 	for (InputChannel* inputChannel : inputChannels)
 	{
-		if (inputChannel->getName() == name) return inputChannel;
+		if (strcmp(inputChannel->getName(), name) == 0) {
+			return inputChannel;
+		}
 	}
 
 	return nullptr;
@@ -45,7 +47,9 @@ OutputChannel* VirtualDeviceHolder::getOutputChannel(const char* name)
 {
 	for (OutputChannel* outputChannel : outputChannels)
 	{
-		if (outputChannel->getName() == name) return outputChannel;
+		if (strcmp(outputChannel->getName(), name) == 0) {
+			return outputChannel;
+		}
 	}
 
 	return nullptr;
@@ -55,7 +59,9 @@ AudioInput* VirtualDeviceHolder::getAudioInput(const char* name)
 {
 	for (AudioInput* audioInput : audioInputs)
 	{
-		if (audioInput->getName() == name) return audioInput;
+		if (strcmp(audioInput->getName(), name) == 0) {
+			return audioInput;
+		}
 	}
 
 	return nullptr;
@@ -63,15 +69,9 @@ AudioInput* VirtualDeviceHolder::getAudioInput(const char* name)
 
 AudioOutput* VirtualDeviceHolder::getAudioOutput(const char* name)
 {
-	Logger::log("Search");
 	for (AudioOutput* audioOutput : audioOutputs)
 	{
-		Logger::log("Search  1  audioOutput->getName() ");
-		std::cout << audioOutput->getName() << std::endl;
-		Logger::log("Search  2  name ");
-		std::cout << name << std::endl;
 		if (strcmp(audioOutput->getName(), name) == 0) {
-			Logger::log("MATCH!!");
 			return audioOutput;
 		}
 	}

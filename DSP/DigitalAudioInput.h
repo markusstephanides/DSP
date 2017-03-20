@@ -4,13 +4,13 @@
 class DigitalAudioInput : public AudioInput
 {
 public:
-	explicit DigitalAudioInput(int);
+	explicit DigitalAudioInput(int, const char*);
 	virtual ~DigitalAudioInput();
-	int getInputId() const;
+	byte getInputId() const;
 	void read(byte[]) override;
 	//void setInputId(int);
 private:
-	int inputId;
+	byte inputId;
 
 
 };

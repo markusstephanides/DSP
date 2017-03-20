@@ -10,7 +10,7 @@ public:
 	virtual ~AudioOutput();
 	void addPlugin(Plugin);
 	virtual void write(byte[]);
-
+	const char* getName();
 private:
 	const char* name;
 	bool enabled;

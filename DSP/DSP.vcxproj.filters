@@ -41,6 +41,18 @@
     <ClCompile Include="AnalogAudioSystem.cpp">
       <Filter>Audio\AudioSystems</Filter>
     </ClCompile>
+    <ClCompile Include="OutputChannel.cpp">
+      <Filter>Audio\Channels</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioRouter.cpp">
+      <Filter>Audio\Routing</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioRoute.cpp">
+      <Filter>Audio\Routing</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualDeviceHolder.cpp">
+      <Filter>Audio\AudioSystems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UDPClient.h">
@@ -82,6 +94,21 @@
     <ClInclude Include="AnalogAudioSystem.h">
       <Filter>Audio\AudioSystems</Filter>
     </ClInclude>
+    <ClInclude Include="OutputChannel.h">
+      <Filter>Audio\Channels</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioRouter.h">
+      <Filter>Audio\Routing</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioRoute.h">
+      <Filter>Audio\Routing</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualDeviceHolder.h">
+      <Filter>Audio\AudioSystems</Filter>
+    </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>Util</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Network">
@@ -107,6 +134,9 @@
     </Filter>
     <Filter Include="Audio\AudioSystems">
       <UniqueIdentifier>{2b567310-0eb1-4aae-91dd-ad959607f306}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Audio\Routing">
+      <UniqueIdentifier>{d962c880-d2e1-4ff0-bb53-741c62e1e1f9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

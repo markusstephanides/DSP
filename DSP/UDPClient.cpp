@@ -4,12 +4,13 @@
 #include <iostream>
 #include <thread>
 #include <future>
+#include "Constants.h"
 
 std::list<DigitalAudioInput*> UDPClient::registeredDigitalInputs = std::list<DigitalAudioInput*>();
 bool UDPClient::listening = false;
 int UDPClient::socketId = -1;
 
-DigitalAudioInput* UDPClient::registerDigitalInput(int inputId)
+DigitalAudioInput* UDPClient::registerDigitalInput(byte inputId, const char* name)
 {
 	for (auto audio_input : registeredDigitalInputs)
 	{
@@ -21,7 +22,7 @@ DigitalAudioInput* UDPClient::registerDigitalInput(int inputId)
 	}
 
 	// there are no digital inputs with that inputId
-	DigitalAudioInput* input = new DigitalAudioInput(inputId);
+	DigitalAudioInput* input = new DigitalAudioInput(inputId, name);
 	registeredDigitalInputs.push_back(input);
 	return input;
 }
@@ -31,9 +32,10 @@ void die(const char *s)
 	Logger::log(s);
 }
 
-void UDPClient::start()
+bool UDPClient::start()
 {
 	std::thread(listen).detach();
+	return true;
 }
 
 void UDPClient::stop()
@@ -62,7 +64,7 @@ void UDPClient::listen()
 	socklen_t slen = socklen_t(sizeof(si_other));
 	socklen_t recv_len;
 
-	byte buf[BUFLEN];
+	byte buf[Constants::NET_BUFFER_SIZE];
 
 	//create a UDP socket
 	if ((s = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
@@ -94,7 +96,7 @@ void UDPClient::listen()
 	{
 
 		//try to receive some data, this is a blocking call
-		if ((recv_len = recvfrom(s, buf, BUFLEN, 0, reinterpret_cast<struct sockaddr*>(&si_other), &slen)) == -1)
+		if ((recv_len = recvfrom(s, buf, Constants::NET_BUFFER_SIZE, 0, reinterpret_cast<struct sockaddr*>(&si_other), &slen)) == -1)
 		{
 			die("recvfrom()");
 		}
@@ -128,11 +130,11 @@ void UDPClient::listen()
 void UDPClient::processAudioDataPacket(byte buf[])
 {
 	// the buffer has the packet type at index 0, the channel id at the last index
-	int channelId = buf[BUFLEN - 1];
+	byte channelId = buf[Constants::NET_BUFFER_SIZE - 1];
 	//printf("Received audio data packet for channel: %i", channelId);
-	byte audioData[BUFLEN - 2];
+	byte audioData[Constants::AUDIO_BUFFER_SIZE];
 
-	for(int i = 0; i < (BUFLEN-2); i++)
+	for(int i = 0; i < Constants::AUDIO_BUFFER_SIZE; i++)
 	{
 		audioData[i] = buf[i + 1];
 	}

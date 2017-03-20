@@ -120,31 +120,40 @@
     <ClCompile Include="AnalogAudioSystem.cpp" />
     <ClCompile Include="AudioInput.cpp" />
     <ClCompile Include="AudioOutput.cpp" />
+    <ClCompile Include="AudioRoute.cpp" />
+    <ClCompile Include="AudioRouter.cpp" />
     <ClCompile Include="Channel.cpp" />
     <ClCompile Include="DigitalAudioInput.cpp" />
     <ClCompile Include="GainPlugin.cpp" />
     <ClCompile Include="InputChannel.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="OutputChannel.cpp" />
     <ClCompile Include="Plugin.cpp" />
     <ClCompile Include="UDPClient.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="VirtualDeviceHolder.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnalogAudioOutput.h" />
     <ClInclude Include="AnalogAudioSystem.h" />
     <ClInclude Include="AudioInput.h" />
     <ClInclude Include="AudioOutput.h" />
+    <ClInclude Include="AudioRoute.h" />
+    <ClInclude Include="AudioRouter.h" />
     <ClInclude Include="Channel.h" />
+    <ClInclude Include="Constants.h" />
     <ClInclude Include="DigitalAudioInput.h" />
     <ClInclude Include="GainPlugin.h" />
     <ClInclude Include="InputChannel.h" />
     <ClInclude Include="Logger.h" />
+    <ClInclude Include="OutputChannel.h" />
     <ClInclude Include="Plugin.h" />
     <ClInclude Include="UDPClient.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="Utils.h" />
+    <ClInclude Include="VirtualDeviceHolder.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

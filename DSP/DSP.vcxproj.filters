@@ -79,9 +79,6 @@
     <ClInclude Include="Plugin.h">
       <Filter>Audio\Processing</Filter>
     </ClInclude>
-    <ClInclude Include="GainPlugin.h">
-      <Filter>Audio\Processing</Filter>
-    </ClInclude>
     <ClInclude Include="InputChannel.h">
       <Filter>Audio\Channels</Filter>
     </ClInclude>
@@ -108,6 +105,9 @@
     </ClInclude>
     <ClInclude Include="Constants.h">
       <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="GainPlugin.h">
+      <Filter>Audio\Processing</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

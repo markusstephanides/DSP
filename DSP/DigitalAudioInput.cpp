@@ -11,7 +11,7 @@ DigitalAudioInput::~DigitalAudioInput()
 
 }
 
-int DigitalAudioInput::getInputId() const
+byte DigitalAudioInput::getInputId() const
 {	
 	return this->inputId;
 }
@@ -25,9 +25,9 @@ void DigitalAudioInput::read(byte audioData[])
 	}
 
 	// then send the processed signals to the channels
-	for (InputChannel channel : this->listeningChannels)
+	for (InputChannel* channel : this->listeningChannels)
 	{
-		channel.read(audioData);
+		channel->read(audioData);
 	}
 
 }

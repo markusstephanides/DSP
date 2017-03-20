@@ -10,6 +10,6 @@ public:
 	void write(byte[]);
 private:
 	bool muted;
-	OutputChannel from;
-	AudioOutput to;
+	/*OutputChannel from;
+	AudioOutput to;*/
 };

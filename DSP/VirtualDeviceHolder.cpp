@@ -89,5 +89,5 @@ AudioOutput* VirtualDeviceHolder::getAudioOutput(const char* name)
 void VirtualDeviceHolder::createDigitalInputChannelOutputChannel(byte channelId, const char* name)
 {
 	audioInputs.push_back(UDPClient::registerDigitalInput(channelId, name));
-	get
+	
 }

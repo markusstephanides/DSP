@@ -14,5 +14,5 @@ void AudioRoute::write(byte audioData[])
 {
 	if (this->muted) return;
 
-	this->to.write(audioData);
+	//this->to.write(audioData);
 }

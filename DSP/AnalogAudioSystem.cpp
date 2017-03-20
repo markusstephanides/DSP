@@ -55,7 +55,7 @@ PaStream* AnalogAudioSystem::openOutputStream(int hwIndex)
 
 	outputParameters.device = deviceIndex;
 	outputParameters.channelCount = 2;       /* stereo output */
-	outputParameters.sampleFormat = paInt16; /* 32 bit floating point output */
+	outputParameters.sampleFormat = paInt16; /* 16 bit int point output */
 	outputParameters.suggestedLatency = Pa_GetDeviceInfo(outputParameters.device)->defaultLowOutputLatency;
 	outputParameters.hostApiSpecificStreamInfo = nullptr;
 

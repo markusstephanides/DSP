@@ -5,17 +5,18 @@
 #include <ostream>
 #include <iostream>
 #include "Constants.h"
+#include <thread>
 
 AnalogAudioOutput::AnalogAudioOutput(int hwIndex, const char* name) : AudioOutput(name)
 {
 	this->hwIndex = hwIndex;
 
 	this->stream = AnalogAudioSystem::openOutputStream(hwIndex);
-	std::cout << this->stream << std::endl;
 }
 
 AnalogAudioOutput::~AnalogAudioOutput()
 {
+
 }
 
 void AnalogAudioOutput::write(byte audioData[])
@@ -29,5 +30,6 @@ void AnalogAudioOutput::write(byte audioData[])
 	printf("WRITE Length: %i - Sum: %i\n", Constants::AUDIO_BUFFER_SIZE, sum);*/
 
 	//printf("Write!\n");
-	Pa_WriteStream(this->stream, audioData, 480);
+
+	std::thread(Pa_WriteStream(this->stream, audioData, 480)).detach();
 }

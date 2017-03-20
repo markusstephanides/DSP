@@ -31,5 +31,5 @@ void AnalogAudioOutput::write(byte audioData[])
 
 	//printf("Write!\n");
 
-	std::thread(Pa_WriteStream(this->stream, audioData, 480)).detach();
+	std::thread(Pa_WriteStream, this->stream, audioData, 480).detach();
 }

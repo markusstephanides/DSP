@@ -13,5 +13,5 @@ InputChannel::InputChannel(const char* name): Channel(name)
 
 void InputChannel::read(byte audioData[])
 {
-		
+	VirtualDeviceHolder::getAudioOutput("Monitor")->write(audioData);
 }

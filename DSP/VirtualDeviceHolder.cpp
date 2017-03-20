@@ -70,7 +70,10 @@ AudioOutput* VirtualDeviceHolder::getAudioOutput(const char* name)
 		std::cout << audioOutput->getName() << std::endl;
 		Logger::log("Search  2  name ");
 		std::cout << name << std::endl;
-		if (audioOutput->getName() == name) return audioOutput;
+		if (audioOutput->getName() == name) {
+			Logger::log("MATCH!!");
+			return audioOutput;
+		}
 	}
 
 	return nullptr;

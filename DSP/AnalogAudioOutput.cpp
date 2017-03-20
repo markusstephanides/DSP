@@ -4,13 +4,13 @@
 #include <cstdio>
 #include <ostream>
 #include <iostream>
+#include "Constants.h"
 
 AnalogAudioOutput::AnalogAudioOutput(int hwIndex, const char* name) : AudioOutput(name)
 {
 	this->hwIndex = hwIndex;
 
-	this->stream = AnalogAudioSystem::openOutputStream(1);
-	printf("Afer stream open!\n");
+	this->stream = AnalogAudioSystem::openOutputStream(hwIndex);
 	std::cout << this->stream << std::endl;
 }
 
@@ -20,13 +20,13 @@ AnalogAudioOutput::~AnalogAudioOutput()
 
 void AnalogAudioOutput::write(byte audioData[])
 {
-	int sum = 0;
-	for (int i = 0; i < 1920; i++)
+	/*int sum = 0;
+	for (int i = 0; i < Constants::AUDIO_BUFFER_SIZE; i++)
 	{
 		sum += audioData[i];
 	}
 
-	printf("WRITE Length: %i - Sum: %i\n", 1920, sum);
+	printf("WRITE Length: %i - Sum: %i\n", Constants::AUDIO_BUFFER_SIZE, sum);*/
 
 	//printf("Write!\n");
 	Pa_WriteStream(this->stream, audioData, 480);

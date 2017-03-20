@@ -13,3 +13,8 @@ void AudioOutput::write(byte[])
 {
 	printf("BASE WRITE!\n");
 }
+
+const char* AudioOutput::getName()
+{
+	return this->name;
+}

@@ -1,9 +1,9 @@
 ﻿#include "DigitalAudioInput.h"
 #include "Logger.h"
 
-DigitalAudioInput::DigitalAudioInput(int inputId_)
+DigitalAudioInput::DigitalAudioInput(int inputId_, const char* name) : inputId(inputId_), AudioInput(name)
 {
-	this->inputId = inputId_;
+
 }
 
 DigitalAudioInput::~DigitalAudioInput()

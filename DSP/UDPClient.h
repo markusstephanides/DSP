@@ -7,18 +7,14 @@
 #include<sys/socket.h>
 #include <unistd.h>
 
-
-#define BUFLEN 1922  //Max length of buffer
 #define PORT 8888   //The port on which to listen for incoming data
 
 
 class UDPClient
 {
 public:
-	UDPClient();
-	~UDPClient();
-	static DigitalAudioInput* registerDigitalInput(int inputId);
-	static void start();
+	static DigitalAudioInput* registerDigitalInput(byte inputId, const char*);
+	static bool start();
 	static void stop();
 	static void deallocate();
 private:

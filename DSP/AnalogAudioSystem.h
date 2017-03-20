@@ -5,7 +5,7 @@
 class AnalogAudioSystem
 {
 public:
-	static void init();
+	static bool init();
 	static PaStream* openOutputStream(int);
 	static void shutdown();
 

@@ -8,14 +8,18 @@
 
 std::list<PaStream*> AnalogAudioSystem::openStreams = std::list<PaStream*>();
 
-void AnalogAudioSystem::init()
+bool AnalogAudioSystem::init()
 {
+	Logger::log("Initializing analog audio system using PortAudio!");
 	//Initialize
 	PaError err = Pa_Initialize();
 	if (err != paNoError)
 	{
 		printf("PortAudio error: %s\n", Pa_GetErrorText(err));
+		return false;
 	}
+
+	return true;
 }
 
 PaStream* AnalogAudioSystem::openOutputStream(int hwIndex)

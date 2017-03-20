@@ -6,27 +6,35 @@
 #include "UDPClient.h"
 #include <iostream>
 #include "AnalogAudioSystem.h"
+#include "VirtualDeviceHolder.h"
 
 int main() {
-	Logger::log("Starting DSP firmware!");
+	Logger::log("Starting DSP!");
 
-	AnalogAudioSystem::init();
-
-	// to test the audan interface, we create a digital audio input along with some channels
-	Logger::log("1");
-	DigitalAudioInput* digital_audio_input = UDPClient::registerDigitalInput(10);
-	Logger::log("2");
-	InputChannel channel = InputChannel("PCSounds");
-	Logger::log("3");
-	printf("After 3\n");
-	digital_audio_input->addListeningChannel(channel);
-	printf("After call\n");
-	Logger::log("4");
-	UDPClient::start();
-	Logger::log("5");
+	//Initialize the analog audio 
+	if(!AnalogAudioSystem::init())
+	{
+		Logger::log("Failed to initialize the analog audio system! Aborting startup...");
+		return 0;
+	}
+	//Initialize the virtual device holder
+	if(!VirtualDeviceHolder::init())
+	{
+		Logger::log("Failed to initialize the virtual device holder! Aborting startup...");
+		return 0;
+	}
+	//Start the udp client
+	if(!UDPClient::start())
+	{
+		Logger::log("Failed to start the udp server! Aborting startup...");
+		return 0;
+	}
+	
+	Logger::log("DSP is ready!");
 	Logger::log("Waiting for user input...");
 	getchar();
 	AnalogAudioSystem::shutdown();
 	UDPClient::deallocate();
+	Logger::log("The DSP has been shutdown. Bye!");
 	return 0;
 }

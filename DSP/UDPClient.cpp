@@ -100,6 +100,8 @@ void UDPClient::listen()
 		{
 			die("recvfrom()");
 		}
+
+		Logger::log("Recieved packet!");
 	
 		int pktId = buf[0];
 		

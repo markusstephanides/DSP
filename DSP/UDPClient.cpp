@@ -108,7 +108,7 @@ void UDPClient::listen()
 		switch (pktId)
 		{
 		case 1:
-			processAudioDataPacket(buf);
+			std::thread(processAudioDataPacket, buf).detach();
 			break;
 		default: break;
 		}

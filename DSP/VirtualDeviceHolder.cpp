@@ -19,7 +19,8 @@ bool VirtualDeviceHolder::init()
 	createDigitalInputChannelOutputChannel(3, "Cart 2");
 	createDigitalInputChannelOutputChannel(4, "Cart 3");
 	createDigitalInputChannelOutputChannel(5, "Cart 4");*/
-	createDigitalInputChannelOutputChannel(10, "PC Sounds");
+	createDigitalInputChannelOutputChannel(9, "PC Sounds (DX)");
+	//createDigitalInputChannelOutputChannel(10, "PC Sounds");
 	/*createDigitalInputChannelOutputChannel(11, "PPFL");
 	createDigitalInputChannelOutputChannel(12, "Voice");*/
 

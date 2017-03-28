@@ -1,5 +1,5 @@
 ﻿#include "VirtualDeviceHolder.h"
-#include "AudanAudioClient"
+#include "AudanAudioClient.h"
 #include "Logger.h"
 #include <iostream>
 

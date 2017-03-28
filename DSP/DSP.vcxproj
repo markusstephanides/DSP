@@ -118,6 +118,7 @@
   <ItemGroup>
     <ClCompile Include="AnalogAudioOutput.cpp" />
     <ClCompile Include="AnalogAudioSystem.cpp" />
+    <ClCompile Include="AudanSyncClient.cpp" />
     <ClCompile Include="AudioInput.cpp" />
     <ClCompile Include="AudioOutput.cpp" />
     <ClCompile Include="AudioRoute.cpp" />
@@ -130,7 +131,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="OutputChannel.cpp" />
     <ClCompile Include="Plugin.cpp" />
-    <ClCompile Include="UDPClient.cpp" />
+    <ClCompile Include="AudanAudioClient.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="Utils.cpp" />
     <ClCompile Include="VirtualDeviceHolder.cpp" />
@@ -138,6 +139,7 @@
   <ItemGroup>
     <ClInclude Include="AnalogAudioOutput.h" />
     <ClInclude Include="AnalogAudioSystem.h" />
+    <ClInclude Include="AudanSyncClient.h" />
     <ClInclude Include="AudioInput.h" />
     <ClInclude Include="AudioOutput.h" />
     <ClInclude Include="AudioRoute.h" />
@@ -150,7 +152,7 @@
     <ClInclude Include="Logger.h" />
     <ClInclude Include="OutputChannel.h" />
     <ClInclude Include="Plugin.h" />
-    <ClInclude Include="UDPClient.h" />
+    <ClInclude Include="AudanAudioClient.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="VirtualDeviceHolder.h" />

@@ -1,6 +1,7 @@
 ﻿#include "AudanSyncClient.h"
 #include "Logger.h"
 #include "Constants.h"
+#include "Utils.h"
 #include <thread>
 #include <iostream>
 

@@ -40,7 +40,7 @@ void AudanSyncClient::listen()
 	socklen_t slen = socklen_t(sizeof(si_other));
 	socklen_t recv_len;
 
-	byte buf[Constants::NET_BUFFER_SIZE];
+	byte buf[8];
 
 	//create a UDP socket
 	if ((s = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
@@ -72,7 +72,7 @@ void AudanSyncClient::listen()
 	{
 
 		//try to receive some data, this is a blocking call
-		if ((recv_len = recvfrom(s, buf, Constants::NET_BUFFER_SIZE, 0, reinterpret_cast<struct sockaddr*>(&si_other), &slen)) == -1)
+		if ((recv_len = recvfrom(s, buf, 8, 0, reinterpret_cast<struct sockaddr*>(&si_other), &slen)) == -1)
 		{
 			die("recvfrom()");
 		}

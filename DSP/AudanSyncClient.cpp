@@ -29,7 +29,6 @@ void AudanSyncClient::deallocate()
 		Logger::log("Deallocating AudanAudioClient after it was stopped!");
 	}
 	else Logger::log("Deallocating AudanAudioClient!");
-	registeredDigitalInputs.clear();
 }
 
 void AudanSyncClient::listen()

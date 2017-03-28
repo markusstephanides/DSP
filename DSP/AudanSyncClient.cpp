@@ -1,13 +1,10 @@
 ﻿#include "AudanSyncClient.h"
 #include "Logger.h"
-#include "Constants.h"
-#include "Utils.h"
 #include <ostream>
 #include <iostream>
 #include <thread>
 #include <future>
-#include <thread>
-#include <iostream>
+#include "Constants.h"
 
 void die(const char *s)
 {
@@ -81,7 +78,7 @@ void AudanSyncClient::listen()
 			die("recvfrom()");
 		}
 
-		currentMs = *static_cast<unsigned long*>(buf);
+		currentMs = *reinterpret_cast<unsigned long*>(buf);
 		std::cout << currentMs << std::endl;
 
 	}

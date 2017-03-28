@@ -5,6 +5,7 @@
 #include <thread>
 #include <future>
 #include "Constants.h"
+#include "Utils.h"
 
 void die(const char *s)
 {

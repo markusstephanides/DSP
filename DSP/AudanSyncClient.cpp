@@ -2,6 +2,10 @@
 #include "Logger.h"
 #include "Constants.h"
 #include "Utils.h"
+#include <ostream>
+#include <iostream>
+#include <thread>
+#include <future>
 #include <thread>
 #include <iostream>
 
@@ -54,7 +58,7 @@ void AudanSyncClient::listen()
 	memset((char *)&si_me, 0, sizeof(si_me));
 
 	si_me.sin_family = AF_INET;
-	si_me.sin_port = htons(PORT);
+	si_me.sin_port = htons(SYNC_PORT);
 	si_me.sin_addr.s_addr = htonl(INADDR_ANY);
 
 	//bind socket to port

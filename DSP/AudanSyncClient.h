@@ -7,7 +7,7 @@
 #include <unistd.h>
 
 
-#define PORT 9000 
+#define SYNC_PORT 9000 
 
 class AudanSyncClient
 {

@@ -7,6 +7,9 @@
 #include "Constants.h"
 #include "Utils.h"
 
+bool AudanSyncClient::listening = false;
+int AudanSyncClient::socketId = -1;
+
 void AudanSyncClient::die(const char *s)
 {
 	Logger::log(s);

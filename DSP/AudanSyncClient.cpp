@@ -9,6 +9,7 @@
 
 bool AudanSyncClient::listening = false;
 int AudanSyncClient::socketId = -1;
+unsigned long AudanSyncClient::currentMs = 0L;
 
 void AudanSyncClient::die(const char *s)
 {

@@ -13,6 +13,7 @@ class AudanSyncClient
 {
 public:
 	static unsigned long currentMs;
+	static void die(const char* s);
 	static bool start();
 	static void stop();
 	static void deallocate();

@@ -7,7 +7,7 @@
 #include "Constants.h"
 #include "Utils.h"
 
-void die(const char *s)
+void AudanSyncClient::die(const char *s)
 {
 	Logger::log(s);
 }

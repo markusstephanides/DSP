@@ -33,9 +33,9 @@ void AudanSyncClient::deallocate()
 {
 	if (listening) {
 		stop();
-		Logger::log("Deallocating AudanAudioClient after it was stopped!");
+		Logger::log("Deallocating AudanSyncClient after it was stopped!");
 	}
-	else Logger::log("Deallocating AudanAudioClient!");
+	else Logger::log("Deallocating AudanSyncClient!");
 }
 
 void AudanSyncClient::listen()
